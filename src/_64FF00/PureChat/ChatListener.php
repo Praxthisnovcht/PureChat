@@ -85,6 +85,7 @@ class ChatListener implements Listener
 				
 			
     }
+    }
 
     /**
      * @param PlayerJoinEvent $event
