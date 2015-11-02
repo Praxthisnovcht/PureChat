@@ -70,6 +70,20 @@ class ChatListener implements Listener
         $chatFormat = $this->plugin->getCustomChatFormat($player, $message, $levelName);
 
         $event->setFormat($chatFormat);
+        
+			if ( $this->plugin->getConfig()->get("per-world-chat") == true){
+					$chatformat = $this->plugin->getCustomChatFormat($player, $message, $levelName);
+				foreach($player->getServer()->getOnlinePlayers() as $players){
+					if ($players->getLevel()->getName() == $player->getLevel()->getName()){
+						$players->sendMessage($chaformat);
+					}
+				}
+				$player->getServer()->getLogger()->info($chaformat);
+				$event->setCancelled(true);
+				return;
+			
+				
+			
     }
 
     /**
