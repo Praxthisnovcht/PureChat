@@ -5,6 +5,7 @@
 # Allows you to use per-world chat formats + per-world nametags
 # - true / false
 enable-multiworld-support: false
+per-world-chat: true
 
 # This message will be shown replacing th {faction} tag when a player is not in any faction
 # - STRING
